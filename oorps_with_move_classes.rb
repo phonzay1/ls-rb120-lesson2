@@ -95,7 +95,7 @@ class Human < Player
   def choose
     choice = nil
     loop do
-      puts "Please choose one: #{Move::VALUES}"
+      puts "Please choose one: #{Move::VALUES.join(', ')}"
       choice = gets.chomp
       break if Move::VALUES.include?(choice)
       puts "Sorry, that's not a valid choice."

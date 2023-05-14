@@ -59,7 +59,7 @@ class Human < Player
   def choose
     choice = nil
     loop do
-      puts "Please choose one: #{Move::VALUES}"
+      puts "Please choose one: #{Move::VALUES.join(', ')}"
       choice = gets.chomp
       break if Move::VALUES.include?(choice)
       puts "Sorry, that's not a valid choice."
@@ -148,7 +148,7 @@ class RPSGame
 
   def display_move_history
     player_moves.each do |player, moves|
-      puts "#{player.name} has played: #{moves}"
+      puts "#{player.name} has played: #{moves.join(', ')}"
     end
   end
 
